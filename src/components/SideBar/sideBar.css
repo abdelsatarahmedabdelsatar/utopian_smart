@@ -1,0 +1,35 @@
+@keyframes move2{
+    from{ transform: translate(0);}
+    to{transform: translate(10px, 0px);}
+  }
+  .side{
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    padding-top: 75px;
+  }
+  .side li{
+    padding-top: 22px;
+    font-size: 40px;
+  }
+  
+  @media screen and (max-width: 1000px) {
+    .side {
+    display: none;
+    }
+  }
+  .side ul li div {
+    background-color: rgb(255, 255, 255);
+    width: 47%;
+    border-radius: 50%;
+    box-shadow:6px 5px 10px #000000;
+  }
+  .side ul li:hover{
+  animation: move2 0.5s both;
+  }
+  .side ul{
+    padding-right: 15px;
+    padding-left: 15px;
+
+  }

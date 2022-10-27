@@ -1,0 +1,18 @@
+.nav-item:hover{
+    text-decoration: underline;
+}
+
+.navbar-brand :hover{
+    transform: scale(1.2);
+    animation: move 0.8s both;
+}
+
+@keyframes move{
+    from{ transform: scale(1);}
+    to{ transform: scale(1.2);}
+}
+
+nav{
+    height: 70px;
+    box-shadow:3px 3px 30px rgb(9, 51, 76);
+}

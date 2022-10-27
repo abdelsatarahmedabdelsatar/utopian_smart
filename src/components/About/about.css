@@ -1,0 +1,20 @@
+ .about{
+    margin-top:80px;
+    color: var(--text-color);
+    font-family: var(--smart-font);
+ }
+
+.mycard{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 1%;
+}
+.front{
+    z-index: 200;
+}
+.title{
+    margin-top: 80px;
+}
+.front .pageName{
+    font-size: 7vw;
+}

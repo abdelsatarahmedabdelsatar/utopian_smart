@@ -1,0 +1,4 @@
+.footer{
+    backdrop-filter: blur(6px) brightness(70%);
+    font-family: var(--smart-font);
+}

@@ -1,7 +1,14 @@
 .App {
   text-align: center;
 }
+.main{
 
+  background-image: linear-gradient(rgba(1, 0, 17, 0.7), rgba(12, 0, 27, 0.7)), url('https://tesonsolutions.com/wp-content/uploads/2019/09/bc-smart-homes.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +42,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+:root{
+  --smart-font: cursive;
+  --color:#272727;
+  --text-color:#ffffff;
 }
