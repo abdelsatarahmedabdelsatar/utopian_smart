@@ -1,18 +1,35 @@
 
 .contact{
-    margin-top:1%;
+    color: var(--text-color);
     margin-bottom:12%;
     font-family: var(--smart-font);
 }
+.contact input,.contact textarea{
+    background-color: rgb(210, 210, 210);
+    width: 50vw;
+}
+/* .contact textarea{
+    background-color: rgb(183, 183, 183);
+    width: 50vw;
+} */
 .contact h1{
     font-size: 5vw;
 }
-
+.detailesBody{
+    padding-top: 70px;
+}
 .icon-brand{
+    margin-top: 40px;
     color: rgb(54, 110, 239);
     font-size: 22vw;
 }
 .bord{
-    font-size: 2vw;
-    border-left: 1.5px solid rgb(139, 139, 139);
+    font-size: 1.55vw;
+    border-left: 1.2px solid rgb(94, 94, 94);
+    padding: 30px;
+}
+form .icon{
+    font-size: 7px;
+    height: 20px;
+    width: 20px;
 }

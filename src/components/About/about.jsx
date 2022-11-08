@@ -6,97 +6,82 @@ function About() {
   return (
     <>
     <div className="row gx-0">
-    <div className="col-lg-1">
-</div>
-      <div className="col-11">
       <div className="about">
         <div className="front">
-          <h1 className="pageName">About UTOPIAN...</h1>
           <div className="contain">
           <div className="row gx-0">
-            <div className="col-md-3 mycard bg-primary shadow">
+            <div className="col-md-7 mycard bg-info">
               <h1>01</h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Numquam illo, exercitationem et nemo consequatur expedita
                 doloribus soluta! Eius culpa, reiciendis voluptate rerum omnis
                 maiores ullam quidem atque, similique iusto cum?Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit. Aliquam in ut
-                earum sapiente ipsam odio dolores neque? Aperiam modi distinctio
-                at atque fuga labore, asperiores sed debitis nobis? Sint, esse?
-              </p>
-            </div>
-            <div className="col-md-3 mycard bg-danger shadow">
-              <h1>02</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                m ipsum dolor sit amet consectetur, adipisicing elit.
                 Numquam illo, exercitationem et nemo consequatur expedita
-                doloribus soluta! Eius culpa, reiciendis voluptate rerum omnis
-                maiores ullam quidem atque, similique iusto cum?Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit. Aliquam in ut
+                doloribus soluta! Eius culpa, reiciut
                 earum sapiente ipsam odio dolores neque? Aperiam modi distinctio
-                at atque fuga labore, asperiores sed debitis nobis? Sint, esse?
-              </p>
-            </div>
-            <div className="col-md-3 mycard bg-success shadow">
-              {" "}
-              <h1>03</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                m ipsum dolor sit amet consectetur, adipisicing elit.
                 Numquam illo, exercitationem et nemo consequatur expedita
-                doloribus soluta! Eius culpa, reiciendis voluptate rerum omnis
-                maiores ullam quidem atque, similique iusto cum?Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit. Aliquam in ut
-                earum sapiente ipsam odio dolores neque? Aperiam modi distinctio
-                at atque fuga labore, asperiores sed debitis nobis? Sint, esse?
+                doloribus soluta! Eius culpa, reiciut
+                earum sapiente ipsam odio dolores neque? Aperiam modi 
               </p>
             </div>
-          </div>
-          <div className="row gx-0">
-            <div className="col-md-3 mycard bg-success shadow">
-              <h1>01</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Numquam illo, exercitationem et nemo consequatur expedita
-                doloribus soluta! Eius culpa, reiciendis voluptate rerum omnis
-                maiores ullam quidem atque, similique iusto cum?Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit. Aliquam in ut
-                earum sapiente ipsam odio dolores neque? Aperiam modi distinctio
-                at atque fuga labore, asperiores sed debitis nobis? Sint, esse?
-              </p>
+            <div className="col-md-5">
+             
+             <img src={process.env.PUBLIC_URL+"images/2.jpg"} alt="" width='100%' style={{height:'35vw'}} />
             </div>
-            <div className="col-md-3 mycard bg-primary shadow">
-              <h1>02</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Numquam illo, exercitationem et nemo consequatur expedita
-                doloribus soluta! Eius culpa, reiciendis voluptate rerum omnis
-                maiores ullam quidem atque, similique iusto cum?Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit. Aliquam in ut
-                earum sapiente ipsam odio dolores neque? Aperiam modi distinctio
-                at atque fuga labore, asperiores sed debitis nobis? Sint, esse?
-              </p>
-            </div>
-            <div className="col-md-3 mycard bg-danger shadow">
-              {" "}
-              <h1>03</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Numquam illo, exercitationem et nemo consequatur expedita
-                doloribus soluta! Eius culpa, reiciendis voluptate rerum omnis
-                maiores ullam quidem atque, similique iusto cum?Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit. Aliquam in ut
-                earum sapiente ipsam odio dolores neque? Aperiam modi distinctio
-                at atque fuga labore, asperiores sed debitis nobis? Sint, esse?
-              </p>
-            </div>
-          </div>
-          </div>
+            <div className="col-md-5">
+            <img src={process.env.PUBLIC_URL+"images/3.jpg"} alt="" width='100%' style={{height:'35vw'}} />
 
+            
+            </div>
+            <div className="col-md-7 bg-mysuccess mycard">
+            <h1>02</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Numquam illo, exercitationem et nemo consequatur expedita
+                doloribus soluta! Eius culpa, reiciut
+                earum sapiente ipsam odio dolores neque? Aperiam modi distinctio
+                at atque fuga labore, asperiores sed debitis nobis? Sint, esse?
+                m ipsum dolor sit amet consectetur, adipisicing elit.
+                Numquam illo, exercitationem et nemo consequatur expedita
+                doloribus soluta! Eius culpa, reiciut
+                earum sapiente ipsam odio dolores neque? Aperiam modi distinctio
+                m ipsum dolor sit amet consectetur, adipisicing elit.
+                Numquam illo, exercitationem et nemo consequatur expedita
+                doloribus soluta! Eius culpa, reiciut
+                earum sapiente ipsam odio dolores neque? Aperiam modi distinctio
+                m ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+
+            </div>
+            <div className="col-md-7 mycard bg-myDanger">
+              <h1>03</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Numquam illo, exercitationem et nemo consequatur expedita
+                doloribus soluta! Eius culpa, reiciendis voluptate rerum omnis
+                maiores ullam quidem atque, similique iusto cum?Lorem ipsum
+                dolor sit amet, consectetur adipisicing elit. Aliquam in ut
+                maiores ullam quidem atque, similique iusto cum?Lorem ipsum
+                dolor sit amet, consectetur adipisicing elit. Aliquam in ut
+                m ipsum dolor sit amet consectetur, adipisicing elit.
+                Numquam illo, exercitationem et nemo consequatur expedita
+                doloribus soluta! Eius culpa, reiciut
+                earum sapiente ipsam odio dolores neque? Aperiam modi distinctio
+                m ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+            </div>
+            <div className="col-md-5">
+             
+             <img src={process.env.PUBLIC_URL+"images/2.jpg"} alt="" width='100%' style={{height:'35vw'}} />
+            </div>
+            </div>
+          </div>
+          </div>
         </div>
       </div>
-      </div>
-    </div>
   
     </>
   );

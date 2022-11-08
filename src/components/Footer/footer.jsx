@@ -4,7 +4,7 @@ import "./footer.css";
 function Footer() {
   return (
     <>
-      <footer className="footer p-5 text-light">
+      <footer className="footer p-5 text-light bg-dark">
         <div className="row">
           <div className="col-12">
             <div className="row ">
@@ -12,27 +12,27 @@ function Footer() {
                 <h5>Section</h5>
                 <ul className="nav flex-column">
                   <li className="nav-item mb-2">
-                    <a href="#" className="nav-link p-0 text-muted">
+                    <a href="#" className="nav-link p-0 text-light">
                       Home
                     </a>
                   </li>
                   <li className="nav-item mb-2">
-                    <a href="#" className="nav-link p-0 text-muted">
+                    <a href="#" className="nav-link p-0 text-light">
                       Features
                     </a>
                   </li>
                   <li className="nav-item mb-2">
-                    <a href="#" className="nav-link p-0 text-muted">
+                    <a href="#" className="nav-link p-0 text-light">
                       Pricing
                     </a>
                   </li>
                   <li className="nav-item mb-2">
-                    <a href="#" className="nav-link p-0 text-muted">
+                    <a href="#" className="nav-link p-0 text-light">
                       FAQs
                     </a>
                   </li>
                   <li className="nav-item mb-2">
-                    <a href="#" className="nav-link p-0 text-muted">
+                    <a href="#" className="nav-link p-0 text-light">
                       About
                     </a>
                   </li>
@@ -43,27 +43,27 @@ function Footer() {
                 <h5>Section</h5>
                 <ul className="nav flex-column">
                   <li className="nav-item mb-2">
-                    <a href="#" className="nav-link p-0 text-muted">
+                    <a href="#" className="nav-link p-0 text-light">
                       Home
                     </a>
                   </li>
                   <li className="nav-item mb-2">
-                    <a href="#" className="nav-link p-0 text-muted">
+                    <a href="#" className="nav-link p-0 text-light">
                       Features
                     </a>
                   </li>
                   <li className="nav-item mb-2">
-                    <a href="#" className="nav-link p-0 text-muted">
+                    <a href="#" className="nav-link p-0 text-light">
                       Pricing
                     </a>
                   </li>
                   <li className="nav-item mb-2">
-                    <a href="#" className="nav-link p-0 text-muted">
+                    <a href="#" className="nav-link p-0 text-light">
                       FAQs
                     </a>
                   </li>
                   <li className="nav-item mb-2">
-                    <a href="#" className="nav-link p-0 text-muted">
+                    <a href="#" className="nav-link p-0 text-light">
                       About
                     </a>
                   </li>
@@ -74,27 +74,27 @@ function Footer() {
                 <h5>Section</h5>
                 <ul className="nav flex-column">
                   <li className="nav-item mb-2">
-                    <a href="#" className="nav-link p-0 text-muted">
+                    <a href="#" className="nav-link p-0 text-light">
                       Home
                     </a>
                   </li>
                   <li className="nav-item mb-2">
-                    <a href="#" className="nav-link p-0 text-muted">
+                    <a href="#" className="nav-link p-0 text-light">
                       Features
                     </a>
                   </li>
                   <li className="nav-item mb-2">
-                    <a href="#" className="nav-link p-0 text-muted">
+                    <a href="#" className="nav-link p-0 text-light">
                       Pricing
                     </a>
                   </li>
                   <li className="nav-item mb-2">
-                    <a href="#" className="nav-link p-0 text-muted">
+                    <a href="#" className="nav-link p-0 text-light">
                       FAQs
                     </a>
                   </li>
                   <li className="nav-item mb-2">
-                    <a href="#" className="nav-link p-0 text-muted">
+                    <a href="#" className="nav-link p-0 text-light">
                       About
                     </a>
                   </li>
@@ -122,11 +122,9 @@ function Footer() {
                 </form>
               </div>
             </div>
-            <div className="text-center py-2 my-2 border-top">
-            </div>                    
             <Map />
-            <div className="text-center py-3 my-3 border-top">
-              <p>&copy; 2022 UTOPIAN Company, Inc. All rights reserved.</p>
+            <div className="text-center py-3 my-3">
+              <p>&copy; 2022 UTOPIAN Company <img src={process.env.PUBLIC_URL + "/images/icon.png"} alt="" />{" "}, Inc. All rights reserved.</p>
             </div>   
           </div>
         </div>

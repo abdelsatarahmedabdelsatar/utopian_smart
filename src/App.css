@@ -3,11 +3,12 @@
 }
 .main{
 
-  background-image: linear-gradient(rgba(1, 0, 17, 0.7), rgba(12, 0, 27, 0.7)), url('https://tesonsolutions.com/wp-content/uploads/2019/09/bc-smart-homes.jpg');
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.753), rgba(0, 0, 0, 0.776)), url(/public/images/logo.jpg); */
+  background-color:var(--back-color);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-
+  font-family: var(--smart-font);
 }
 .App-logo {
   height: 40vmin;
@@ -44,7 +45,9 @@
   }
 }
 :root{
-  --smart-font: cursive;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  --smart-font:Verdana, Geneva, Tahoma, sans-serif;
   --color:#272727;
-  --text-color:#ffffff;
+  --text-color:#000000;
+  --back-color: rgb(255, 255, 255);
 }

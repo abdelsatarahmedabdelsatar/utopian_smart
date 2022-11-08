@@ -1,4 +1,9 @@
 .footer{
-    backdrop-filter: blur(6px) brightness(70%);
     font-family: var(--smart-font);
+    color: var(--text-color);
+}
+.footer img{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
 }

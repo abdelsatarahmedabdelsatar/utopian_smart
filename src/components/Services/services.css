@@ -1,0 +1,26 @@
+.img2{
+    width: 25vw;
+    height: 32vw;
+}
+.myServices{
+    box-shadow: 0px 0px 16px rgb(114, 114, 114);
+}
+
+.allServices{
+    padding-bottom: 8%;
+    padding-top: 8%;
+
+    padding-left:100px;
+}
+
+@media screen and (max-width:576px){
+
+    .allServices{
+        padding-left: 20%;
+    }
+    .img2{
+        width: 200px;
+        height: 280px;
+    }
+    
+}

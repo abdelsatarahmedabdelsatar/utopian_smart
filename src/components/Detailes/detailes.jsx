@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import  {db}  from "../../Firebase";
 import Spinner from "../Spinner/spinner";
 import './detailes.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faHeadset } from '@fortawesome/free-solid-svg-icons';
 function Details() {
   const { name } = useParams();
   const [problem, setProblem] = useState([]);
@@ -24,31 +27,32 @@ function Details() {
   return (
     <>
       {loader ? (
-        <Spinner />
+        <Spinner style={{marginButtom:'500px'}}/>
       ) : (
-        <div style={{ padding: "70px" }} className="row gx-0 detailes">
-          <div className="col-2"></div>
+        <div style={{ marginTop: "100px" }} className="detailes">
           <div
-            className="col-12 m-3 p-3"
+            className=" m-3 p-3"
           >
             <div className="row">
-              <div className="col-4">
+              <div className="col-md-6">
                 {   
+                
                   <img
                     src={problem[0].image}
                   />
                 }
               </div>
-              <div className="col-6">
-                <h1>{problem[0].title}</h1>
-                <p>{problem[0].information}</p>
-                <p>{problem[0].information}</p>
-                 <Link to={`/contactTech/${problem[0].title}`} className="btn btn-success btn-md">Technical</Link>
-                <Link to={`/contactInq/${problem[0].title}`} className="btn btn-danger btn-md ms-2">Inquiries</Link>
-              </div>
+                <div className="col-md-6 data">
+                  <h1>{problem[0].title}</h1>
+                  <p>{problem[0].information}</p>
+                  <p>{problem[0].information}</p>
+                  <div className="mt-5">
+                  {/* <Link to={`/contactTech/${problem[0].title}`} className="btn btn-primary btn-md">Technical support <FontAwesomeIcon className="detaileIcon" icon={faHeadset} /></Link> */}
+                  </div>
+                  
+                </div>
             </div>
           </div>
-          <div className="col-3"></div>
         </div>
       )}
     </>

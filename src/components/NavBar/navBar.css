@@ -1,18 +1,46 @@
-.nav-item:hover{
+.nav-link:hover{
     text-decoration: underline;
+    color:rgb(72, 139, 197);
+}
+
+.navbar{
+    font-size: 19px;
+    backdrop-filter: blur(25px) brightness(30%);
+    font-family: var(--smart-font);
 }
 
 .navbar-brand :hover{
     transform: scale(1.2);
     animation: move 0.8s both;
 }
+.color{
+    color:rgb(83, 149, 206);
+    font-weight: 400;
+}
 
+#main_nav{
+    padding-left: 15vw;
+    font-size: 19px;
+    font-family: var(--smart-font);
+}
 @keyframes move{
     from{ transform: scale(1);}
     to{ transform: scale(1.2);}
 }
 
 nav{
-    height: 70px;
-    box-shadow:3px 3px 30px rgb(9, 51, 76);
+    height: 63px;
+    box-shadow:0px 0px 20px rgb(52, 52, 52);
+}
+@media screen and (max-width:992px) {
+    
+    #main_nav{
+        background-color: rgb(82, 82, 82);
+        padding: 15px;
+    }
+    
+}
+
+#main_nav ul li{
+    margin-left: 1.5rem;
 }
