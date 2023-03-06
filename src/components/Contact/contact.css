@@ -1,35 +1,40 @@
-
-.contact{
-    color: var(--text-color);
-    margin-bottom:12%;
-    font-family: var(--smart-font);
+.contact {
+  color: var(--text-color);
+  font-family: var(--smart-font);
+  position: relative;
 }
-.contact input,.contact textarea{
-    background-color: rgb(210, 210, 210);
-    width: 50vw;
+.contact input,
+.contact textarea {
+  background-color: rgb(255, 255, 255);
+  width: 50vw;
 }
 /* .contact textarea{
     background-color: rgb(183, 183, 183);
     width: 50vw;
 } */
-.contact h1{
-    font-size: 5vw;
+.contact h1 {
+  font-size: 5vw;
 }
-.detailesBody{
-    padding-top: 70px;
+.detailesBody {
+  padding-top: 45px;
 }
-.icon-brand{
-    margin-top: 40px;
-    color: rgb(54, 110, 239);
-    font-size: 22vw;
+.icon-brand {
+  margin-top: 40px;
+  color: rgb(54, 110, 239);
+  font-size: 22vw;
 }
-.bord{
-    font-size: 1.55vw;
-    border-left: 1.2px solid rgb(94, 94, 94);
-    padding: 30px;
+.bord {
+  font-size: 1.55vw;
+  border-left: 1.2px solid rgb(94, 94, 94);
+  padding: 30px;
+  margin-top: 30px;
 }
-form .icon{
-    font-size: 7px;
-    height: 20px;
-    width: 20px;
+form .icon-spinner {
+  font-size: 6px;
+  height: 18px;
+  width: 18px;
+}
+.text-gray{
+  font-size: 13px;
+  color: gray;
 }

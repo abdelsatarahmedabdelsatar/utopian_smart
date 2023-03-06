@@ -3,117 +3,111 @@ import "aos";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./home.css";
-import {db} from "../../Firebase";
-import { Link } from 'react-router-dom';
+import { db } from "../../Firebase";
+import { Link } from "react-router-dom";
 import Footer from "../Footer/footer";
 import Spinner from "../Spinner/spinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
-import About from './../About/about';
+import About from "./../About/about";
 
 function Home() {
   const [problems, setProblems] = useState([]);
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
-    db.collection("problems").limit(3).onSnapshot((snapshot) => {
-      setProblems(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-      setLoader(false);
-    });
+    db.collection("problems")
+      .limit(3)
+      .onSnapshot((snapshot) => {
+        setProblems(
+          snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        );
+        setLoader(false);
+      });
   });
- 
-  return (
-    <>{loader?<Spinner />:  <div className="row gx-0">
-    <div
-      className="p-4 row title"
-      style={{color: "#FFF" }}
-    >
-      <div
-        data-aos="fade-down"
-        data-aos-duration="1000"
-        className="col-md-9"
-      >
-        {/* <h1 >Lorem ipsum consectetur</h1> */}
-        <img className="titleImage" src={process.env.PUBLIC_URL + '/images/text2.png' }/>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic
-          mollitia error architecto Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Tempore necessitatibus cupiditate doloremque
-          ipsam qui voluptatibus.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic
-          mollitia error architecto Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Tempore necessitatibus cupiditate doloremque
-          ipsam qui voluptatibus mollitia error architecto Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Tempore necessitatibus cupiditate doloremque
-          ipsam qui voluptatibus architecto Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Tempore necessitatibus
-          ipsam qui voluptatibus.
-          
-        </p>
-      </div>
-      <div className="col-md-3">
-        <img
-          data-aos-duration="1000"
-          data-aos="fade-left"
-          className="imgLogo"
-          src={process.env.PUBLIC_URL+"images/icon.png"}
-          alt=""
-        />
-      </div>
-    </div>
-    <hr style={{ color: "white" }}  />
-    <div>
-      <About/>
-    </div>
-    <hr style={{ color: "white" }}  />
-    <div className="categories row">
 
-  
-    {problems.map((p,i) => {
-       return (
-        <div key={i} className="col-sm-3 mybody">
-            <Link
-              to={`services/${p.title}`}
-              data-aos="zoom-in"
+  return (
+    <>
+      {loader ? (
+        <Spinner />
+      ) : (
+        <div className="row gx-0 ms-2">
+          <div className="p-4 row title" style={{ color: "#FFF" }}>
+            <div
+              data-aos="fade-down"
               data-aos-duration="1000"
-              className="card border border-dark bg-dark product"
-              style={{ position: "relative"}}
+              className="col-md-9"
             >
               <img
-                className="img"
-                src={p.image}
+                className="titleImage"
+                alt="about_image"
+                src={process.env.PUBLIC_URL + "/images/text2.png"}
+              />
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic
+                mollitia error architecto Lorem ipsum dolor sit amet
+                consectetur, adipisicing elit. Tempore necessitatibus cupiditate
+                doloremque ipsam qui voluptatibus. Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit. Hic mollitia error architecto
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Tempore necessitatibus.
+              </p>
+            </div>
+            <div className="col-md-3">
+              <img
+                data-aos-duration="1000"
+                data-aos="fade-left"
+                className="imgLogo"
+                src={process.env.PUBLIC_URL + "images/icon.png"}
                 alt=""
               />
-              <div
-                className="titleData"
-                style={{
-                  position: "absolute",
-                  color: "white",
-                  bottom: "8px",
-                  left: "16px",
-                }}
+            </div>
+          </div>
+          <div>
+            <About />
+          </div>
+        
+          <div  data-aos="zoom-in"
+                data-aos-duration="1000"
+            className="categories row">
+            {problems.map((p, i) => {
+              return (
+                <div  key={i} className="col-sm-3 mybody">
+                  <Link
+                    to={`services/${p.title}`}
+                    className="card p-3"
+                  >
+                    <img className="img" src={p.gif} alt="" />
+                    {/* <div
+                      className="titleData"
+                      style={{
+                        position: "absolute",
+                        color: "white",
+                        bottom: "8px",
+                        left: "16px",
+                      }}
+                    >
+                    </div> */}
+                  </Link>
+                  <h5>{p.title}</h5>
+                </div>
+              );
+            })}
+            <div className="col-sm-3 mybody">
+              <Link
+                to={`/services`}
+                style={{ position: "relative" }}
               >
-                <h4>{p.title}</h4>  
-              </div>
-            </Link>
+                <FontAwesomeIcon
+                  className="icon-brand icon"
+                  icon={faEllipsis}
+                />
+              </Link>
+            </div>
+          </div>
         </div>
-      );
-    })}
-     <div className="col-sm-3 mybody">
-     <Link
-              to={`/services`}
-              data-aos="zoom-in"
-              data-aos-duration="1000"
-              style={{ position: "relative"}}
-            >
-                       <FontAwesomeIcon style={{fontSize:'16vw',marginLeft:'30px'}} className="icon-brand icon"  icon={faEllipsis} />
-             
-            </Link>
-     </div>
-     </div>
-  </div>
-  }
-      <Footer/>
+      )}
+      <Footer />
     </>
   );
 }

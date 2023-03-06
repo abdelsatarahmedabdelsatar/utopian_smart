@@ -1,5 +1,5 @@
 .packages{
-    margin-top: 130px;
+    margin-top: 60px;
 }
 .myPackage{
     margin-bottom: 90px;
@@ -9,4 +9,7 @@
 }
 .myPackage h4 span{
     color: rgb(14, 14, 14);
+}
+.card{
+    box-shadow: 0px 1px 30px rgba(8, 37, 50, 0.596);
 }

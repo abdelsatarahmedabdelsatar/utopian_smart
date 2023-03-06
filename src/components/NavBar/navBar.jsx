@@ -9,10 +9,22 @@ import { langContext } from "../../context/langContext";
 function NavBar() {
   const { language, setLanguage } = useContext(langContext);
 
+//   document.ready(function () {
+//     "ul.navbar-nav > li > Link".click(
+//       function (e) {
+//         ("ul.navbar-nav > li").removeClass(
+//           "active");
+//       ("ul.navbar-nav > li > Link").css(
+//           "color", "");
+
+//         (this).addClass("active");
+//         (this).css("color", "red");
+//     });
+// });
+
   return (
     <>
       <nav
-        dir={language === "العربية" ? "ltr" : "rtl"}
         className="navbar navbar-expand-lg navbar-dark fixed-top"
       >
         <div className="container-fluid">
@@ -26,7 +38,7 @@ function NavBar() {
           </Link>
            <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link color fw-bold" to='/'>
+                <Link className="nav-link color fw-bold fs-4" to='/'>
                   UTOPIAN
                 </Link>
               </li>
@@ -47,7 +59,7 @@ function NavBar() {
           <div className="navbar-collapse collapse" id="main_nav" >
           <ul  className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link" to="/technical_support">
+                <Link className="nav-link " to="/technical_support">
                   SUPPORT
                 </Link>
               </li>
@@ -66,7 +78,7 @@ function NavBar() {
                   SMART HOME PACKAGES
                 </Link>
               </li>
-              <li className="nav-item ">
+              {/* <li className="nav-item ">
                 <button
                   className="btn btn-sm btn-danger m-2"
                   onClick={() => {
@@ -75,7 +87,7 @@ function NavBar() {
                 >
                   {language}
                 </button>
-              </li>
+              </li> */}
             </ul>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import { db } from "../../Firebase";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Spinner from "../Spinner/spinner";
 import "./packages.css";
 
@@ -12,23 +12,23 @@ function Packages() {
       setPackages(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
       setLoader(false);
     });
-  });
+  },[]);
 
   return (
-    <div className="packages">
+    <>
       {loader ? (
         <Spinner />
       ) : (
-        <div className=" row gx-0">
+        <div className="packages">
+        <div className=" row gx-0 justify-content-center ">
           {myPackages.map((p) => {
             return (
-              <>
-                <div className="col-1"></div>
-                <div className="card col-5 myPackage" style={{ width: "37vw" }}>
+              <React.Fragment key={p.id}>
+                <div className="card myPackage m-5" style={{ width: "33vw" }}>
                   <img
                     src={p.image}
                     className="card-img-top"
-                    style={{ width: "37vw", height: "30vw" }}
+                    style={{ width: "33vw", height: "30vw" }}
                     alt="..."
                   />
                   <div className="card-body">
@@ -38,19 +38,21 @@ function Packages() {
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item">
                       <h4>
-                        {p.price}
+                        {p.price.toLocaleString('en-US')}
                         {"  "}
                         <span>EGP</span>
                       </h4>
                     </li>
                   </ul>
                 </div>
-              </>
+              </React.Fragment>
             );
           })}
         </div>
+        </div>
+  
       )}
-    </div>
+      </>
   );
 }
 
