@@ -5,19 +5,20 @@ import {
   NotificationContainer,
   NotificationManager,
 } from "react-notifications";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faHeadset } from "@fortawesome/free-solid-svg-icons";
-
 
 function ContactTech() {
   const form = useRef();
   const [loading, setLoading] = useState(false);
+  const [messageLength, setMessageLength] = useState(0);
   const [nameCheck, setNameCheck] = useState(false);
   const [phoneCheck, setPhoneCheck] = useState(false);
+  const [messageCheck, setMessageCheck] = useState(false);
 
 
   const notify = (state) => {
@@ -27,8 +28,7 @@ function ContactTech() {
   };
 
   function check(eve) {
-    // const nmeExp = /^([a-z]|[A-Z]){4,15}$/;
-    const nmeExp = /([a-zA-Z]{3,15})+/
+    const nmeExp = /([a-zA-Z]{3,15})+/;
     const phnExp = /^(010|011|012|015)[0-9]{8}$/;
 
     if (eve.target.name === "user_name") {
@@ -48,17 +48,20 @@ function ContactTech() {
         setPhoneCheck(false);
       }
     }
-
-    //   const phnExp = /^(010|011|012|015)[0-9]{8}$/;
-
-    //   if(nmeExp.test(name) && phnExp.test(phone))
-    //       return true;
-    //   else
-    //       return false;
+    else if (eve.target.name === "message") {
+        if(eve.target.value.length > 100){
+          eve.target.style.border = "2px solid red"
+          setMessageCheck(false)
+        }else{ 
+        setMessageLength(eve.target.value.length)
+        eve.target.style.border = "2px solid green"
+        setMessageCheck(true);
+        }
+    }
   }
 
   const clear = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     document.getElementById("name1").value = null;
     document.getElementById("phone1").value = null;
     document.getElementById("message1").value = null;
@@ -66,35 +69,39 @@ function ContactTech() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-   if(nameCheck && phoneCheck && document.getElementById("name1").value!=="" &&  document.getElementById("phone1").value!=="")
-   {
-    setLoading(true);
-    emailjs
-      .sendForm(
-        "service_vg00od9",
-        "template_df609bk",
-        form.current,
-        "QaFtbp2lXayO2eJSb"
-      )
-      .then(
-        (result) => {
-          setLoading(false);
-      setTimeout(function(){
-        window.location.href = "/";
-      },2000)
+    if (
+      nameCheck &&
+      phoneCheck &&
+      messageCheck &&
+      document.getElementById("name1").value !== "" &&
+      document.getElementById("phone1").value !== ""
+    ) {
+      setLoading(true);
+      emailjs
+        .sendForm(
+          "service_vg00od9",
+          "template_df609bk",
+          form.current,
+          "QaFtbp2lXayO2eJSb"
+        )
+        .then(
+          () => {
+            setLoading(false);
+            setTimeout(function () {
+              window.location.href = "/";
+            }, 2500);
 
-          notify("success");
-        },
-        (error) => {
-          setLoading(false);
-          alert(error.text);
-          notify("error");
-        }
-      )
-   }
-   else{
-    notify("error")
-   }
+            notify("success");
+          },
+          (error) => {
+            setLoading(false);
+            alert(error.text);
+            notify("error");
+          }
+        );
+    } else {
+      notify("error");
+    }
   };
 
   return (
@@ -108,7 +115,7 @@ function ContactTech() {
           </div>
           <div className="col-md-7 bord">
             <form ref={form} onSubmit={sendEmail}>
-              <div className="mb-3">
+              <div className="mb-2">
                 <label htmlFor="name1" className="form-label">
                   Enter your name
                 </label>
@@ -121,53 +128,55 @@ function ContactTech() {
                   aria-describedby="emailHelp"
                 />
               </div>
-              <div className="mb-3">
+              <div className="mb-2">
                 <label htmlFor="phone1" className="form-label">
-                  Phone number 
+                  Phone number
                 </label>
                 <input
-                onChange={(event) => check(event)}
+                  onChange={(event) => check(event)}
                   name="phone_number"
                   type="number"
                   className="form-control"
                   id="phone1"
                 />
               </div>
-              <div className="mb-3">
-                <label htmlFor="exampleInputPassword1" className="form-label">
-                  problem 
-                </label>
-                <div className="form-outline">
-                  <input
-                    readOnly
-                    value={
-                      "Technical Support"
-                    }
-                    className="form-control text-dark"
-                    name="problem"
-                  ></input>
-                </div>
-              </div>
               <div className="form-outline mb-4">
                 <label htmlFor="message1" className="form-label">
-                  Message problem 
+                  Message problem
                 </label>
                 <textarea
+                  onChange={(e) => check(e)}
                   className="form-control text-dark"
                   name="message"
                   id="message1"
                   rows="4"
                 ></textarea>
+                <p className="mt-1 text-gray">{messageLength}/100</p>
               </div>
-              <button className="btn btn-primary me-2 mt-2" type="submit" value="Send">
-                {loading ? <i className="spinner-border icon"></i> : "Send"}
+              <button
+                className="btn btn-primary me-2"
+                type="submit"
+                value="Send"
+              >
+                {loading ? <i className="spinner-border icon-spinner"></i> : "Send"}
               </button>
-              <button className="btn btn-warning me-2 mt-2" onClick={(e)=>clear(e)}>clear data</button>
-              <a href='https://api.whatsapp.com/send/?phone=%2B201026166266&text&type=phone_number&app_absent=0' className="btn btn-success btn-md mt-2">technical what'sapp <FontAwesomeIcon className="detaileIcon" icon={faWhatsapp} /></a>
+              <button
+                className="btn btn-warning me-2"
+                onClick={(e) => clear(e)}
+              >
+                clear data
+              </button>
+              <a
+                target='_blank'
+                href="https://api.whatsapp.com/send/?phone=%2B201026166266&text&type=phone_number&app_absent=0"
+                className="btn btn-success btn-md mt-2"
+              >
+                technical what'sapp{" "}
+                <FontAwesomeIcon className="detaileIcon" icon={faWhatsapp} />
+              </a>
             </form>
-            
-            <NotificationContainer />
 
+            <NotificationContainer />
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 .img2{
-    width: 25vw;
-    height: 32vw;
+    width: 22vw;
+    height: 22vw;
 }
 .myServices{
     box-shadow: 0px 0px 16px rgb(114, 114, 114);
@@ -9,9 +9,14 @@
 .allServices{
     padding-bottom: 8%;
     padding-top: 8%;
-
     padding-left:100px;
 }
+.card-title{
+    text-decoration: none !important;
+}
+.img2:hover {
+    animation: move 2s both;
+  }
 
 @media screen and (max-width:576px){
 

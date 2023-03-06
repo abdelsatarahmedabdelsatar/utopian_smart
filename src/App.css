@@ -9,6 +9,7 @@
   background-attachment: fixed;
   background-size: cover;
   font-family: var(--smart-font);
+  z-index: 100;
 }
 .App-logo {
   height: 40vmin;
@@ -45,9 +46,30 @@
   }
 }
 :root{
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
-  --smart-font:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --smart-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --color:#272727;
   --text-color:#000000;
   --back-color: rgb(255, 255, 255);
+  --logo-color:rgb(83, 149, 206)
+}
+
+/* back */
+.custom-shape-divider-top-1668520511 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1668520511 svg {
+  position: relative;
+  display: block;
+  width: calc(160% + 1.3px);
+  height: 1300px;
+}
+
+.custom-shape-divider-top-1668520511 .shape-fill {
+  fill:  rgba(1, 102, 169, 0.591);
 }

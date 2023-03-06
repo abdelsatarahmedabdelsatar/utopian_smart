@@ -1,10 +1,9 @@
-import Map from "../Map/map";
 import "./footer.css";
 
 function Footer() {
   return (
     <>
-      <footer className="footer p-5 text-light bg-dark">
+      <footer className=" p-5 text-light bg-dark">
         <div className="row">
           <div className="col-12">
             <div className="row ">
@@ -122,10 +121,13 @@ function Footer() {
                 </form>
               </div>
             </div>
-            <Map />
             <div className="text-center py-3 my-3">
-              <p>&copy; 2022 UTOPIAN Company <img src={process.env.PUBLIC_URL + "/images/icon.png"} alt="" />{" "}, Inc. All rights reserved.</p>
-            </div>   
+              <p>
+                &copy; 2022 UTOPIAN Company{" "}
+                <img src={process.env.PUBLIC_URL + "/images/icon.png"} alt="" />{" "}
+                , Inc. All rights reserved.
+              </p>
+            </div>
           </div>
         </div>
       </footer>

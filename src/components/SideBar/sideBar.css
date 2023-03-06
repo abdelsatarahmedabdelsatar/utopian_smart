@@ -1,10 +1,10 @@
 @keyframes move2{
     from{ transform:scale(1);}
-    to{transform: scale(1.15);}
+    to{transform: scale(1.1);}
   }
   .side{
     position: fixed;
-    z-index: 1;
+    z-index: 300;
     top: 80%;
   }
   .side li{
@@ -12,15 +12,21 @@
     font-size: 50px;
     margin: 10px;
   }
-  .side li .facebook{
-    box-shadow: 0px 0px 30px rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
+ .facebook{
     border-radius: 15%;
-    color: rgb(18, 73, 239);
+    color: rgb(17, 62, 196);
   }
-  .side li .whatsapp{
-    box-shadow: 0px 0px 30px rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
+  .back{
+    background-color: aliceblue;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin-top: 19.5px;
+    margin-left: 1.7px;
+    z-index: -1;
+    box-shadow: 0px 0px 10px 3px #2c2c2c;
+  }
+  .whatsapp{
     border-radius: 15%;
     color: rgb(56, 192, 106);
   }
@@ -31,7 +37,6 @@
   animation: move2 0.8s both;
   }
   .side ul{
-    padding-right: 15px;
-    padding-left: 25px;
+    padding-left: 12px;
 
   } 

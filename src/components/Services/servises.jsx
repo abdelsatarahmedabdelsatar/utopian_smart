@@ -17,12 +17,10 @@ function Problems() {
 
   return (
     <>
-      <div className="row container gx-0">
-       
-
-      {loader ? (
+     {loader ? (
         <Spinner />
       ) : (
+        <div className="row container gx-0">
         <div className="row gx-0 allServices">
           {problems.map((p, i) => {
             return (
@@ -31,29 +29,18 @@ function Problems() {
                   to={`${p.title}`}
                   data-aos="zoom-in"
                   data-aos-duration="1000"
-                  className="card border border-dark bg-dark myServices "
-                  style={{ position: "relative" }}
+                  className="card p-3 myServices "
                 >
-                  <img className="img2" src={p.image} alt="" />
-                  <div
-                    className="titleData"
-                    style={{
-                      position: "absolute",
-                      color: "white",
-                      bottom: "8px",
-                      left: "16px",
-                    }}
-                  >
-                    <h4>{p.title}</h4>
-                    <div className="btns"></div>
-                  </div>
+                  <img className="img2" src={p.gif} alt="" />
                 </Link>
+                <h5>{p.title}</h5>
+
               </div>
             );
           })}
         </div>
+        </div>
       )}
-            </div>
 
     </>
   );

@@ -1,36 +1,46 @@
- .about{
-    color: var(--text-color);
-    font-family: var(--smart-font);
-    margin-bottom: 50px;
- }
+.about {
+  color: var(--text-color);
+  font-family: var(--smart-font);
+  margin-bottom: 50px;
+  z-index: 100;
+  
+}
 
-.mycard{
-    padding: 10px;
-    border:25px solid white
+.mycard {
+  padding: 10px;
+  margin: 45px;
+  /* border: 2px solid rgb(37, 96, 112); */
+  box-shadow: 0px 0px 20px 3px rgb(88, 88, 88);
+
 }
-.front{
-    z-index: 200;
+
+.title {
+  margin-top: 80px;
 }
-.title{
-    margin-top: 80px;
+.contain {
+  margin-right: 40px;
 }
-.contain{
-    margin-right: 40px;
+.contain img {
+  margin: 10px;
+  /* box-shadow: 0px 0px 40px 5px rgb(137, 137, 137); */
 }
-.contain img{
-    margin: 10px;
+.bg-mysuccess {
+  background-color: rgb(102, 255, 130);
 }
-.bg-mysuccess{
-    background-color: rgb(102, 255, 130)    ;
+.bg-myDanger {
+  background-color: rgb(255, 146, 146);
 }
-.bg-myDanger{
-    background-color: rgb(255, 146, 146);
+.bg-myInfo {
+  background-color: rgb(161, 211, 253);
 }
 @media screen and (width<=768.5px) {
-    .contain {
-      margin-left: 30px;
-    }
-    .contain img{
-        display: none;
-    }
+  .contain {
+    margin-left: 30px;
   }
+  .mycard{
+    margin: 0px;
+  }
+  .contain img {
+    display: none;
+  }
+}
